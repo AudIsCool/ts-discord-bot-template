@@ -1,0 +1,62 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "env": {
+        "es2020": true
+    },
+    "plugins": ["@typescript-eslint", "simple-import-sort", "prettier"],
+    "extends": ["eslint:recommended", "plugin:@typescript-eslint/eslint-recommended"],
+    "rules": {
+        "@typescript-eslint/semi": "error",
+        "max-len": [
+            "warn",
+            {
+                "code": 120
+            }
+        ],
+        "simple-import-sort/sort": "error",
+        "no-else-return": "error",
+        "@typescript-eslint/no-explicit-any": "off"
+    },
+    "overrides": [
+        {
+            "files": ["**/*.ts"],
+            "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+            "rules": {
+                "@typescript-eslint/camelcase": [
+                    "warn",
+                    {
+                        "ignoreImports": true,
+                        "properties": "never"
+                    }
+                ],
+                "@typescript-eslint/no-explicit-any": "off",
+                "@typescript-eslint/no-unused-vars": [
+                    "warn", 
+                    { 
+                      "argsIgnorePattern": "^_",
+                      "varsIgnorePattern": "^_"
+                    }
+                  ]
+            }
+        },
+        {
+            "files": ["**/rollup.config.js"],
+            "env": {
+                "node": true
+            },
+            "extends": ["plugin:prettier/recommended"],
+            "rules": {
+                "@typescript-eslint/no-var-requires": "off"
+            }
+        },
+        {
+            "files": "*",
+            "rules": {
+                "@typescript-eslint/no-use-before-define": "off"
+            }
+        }
+    ]
+}

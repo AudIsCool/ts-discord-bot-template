@@ -1,0 +1,29 @@
+{
+    "name": "auds-discord-bot-template",
+    "version": "0.0.1",
+    "type": "module",
+    "description": "TS based bot",
+    "main": "build/index.js",
+    "scripts": {
+        "start": "node build/index.js",
+        "lint": "npx eslint --color --fix",
+        "build": "tsc --project tsconfig.json",
+        "build:run": "npm run build && npm run start"
+    },
+    "dependencies": {
+        "16": "0.0.2",
+        "@discordx/importer": "1.1.2",
+        "discord.js": "^14.7.1",
+        "discordx": "^11.6.0",
+        "eslint": "^8.10.0",
+        "node-fetch": "^3.2.10",
+        "reflect-metadata": "^0.1.13",
+        "source-map-support": "^0.5.21"
+    },
+    "devDependencies": {
+        "@types/node": "^16.X.X",
+        "typescript": "^4.X.X"
+    },
+    "author": "Aud#9488",
+    "license": "MIT"
+}
